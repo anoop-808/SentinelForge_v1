@@ -60,6 +60,47 @@ Kali Linux → Log Collection → Parsing Engine → JSON Export → Visualizati
 
 ---
 
+## Quick Start
+
+### Clone Repository
+
+```bash
+git clone https://github.com/anoop-808/SentinelForge_v1.git
+cd SentinelForge_v1
+```
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run Log Parser
+
+```bash
+python3 scripts/parser_v2.py
+```
+
+### Generate Security Events
+
+```bash
+python3 scripts/json_export.py
+```
+
+### Generate Visualizations
+
+```bash
+python3 visualization/dashboard.py
+```
+
+### View Outputs
+
+```bash
+cat output/parser_output.txt
+```
+
+---
+
 ## Project Workflow
 
 ### Phase 1: Authentication Activity Generation
@@ -111,11 +152,38 @@ A formal SOC investigation report was created, including:
 
 ## MITRE ATT&CK Mapping
 
+## MITRE ATT&CK Mapping
+
 | Security Activity | ATT&CK Technique |
 |-------------------|------------------|
-| Failed SSH Login Attempts | T1110 - Brute Force |
+| Failed SSH Login Attempts | T1110.001 - Password Guessing |
+| Multiple Failed Logins | T1110 - Brute Force |
 | Successful SSH Authentication | T1078 - Valid Accounts |
-| Remote Access Services | T1021 - Remote Services |
+| SSH Remote Access | T1021.004 - SSH |
+| User Enumeration Attempts | T1087 - Account Discovery |
+| Cron Job Execution | T1053.003 - Cron |
+| Command Execution via Cron | T1059 - Command and Scripting Interpreter |
+
+---
+
+## Code Representation
+
+## Parsing Logic Example
+
+```python
+if "Failed password" in line:
+    print(line.strip())
+
+elif "Accepted password" in line:
+    print(line.strip())
+
+elif "CRON" in line:
+    print(line.strip())
+```
+
+The parser identifies authentication events and extracts security-relevant activity from Linux authentication logs.
+
+---
 
 ## Repository Structure
 
@@ -161,11 +229,12 @@ SOC-LAB/
 
 ## Future Enhancements
 
-* Real-time log monitoring
-* Alert correlation engine
-* Wazuh integration
-* SIEM rule creation
-* Threat hunting workflows
+- Real-time log monitoring
+- Wazuh agent integration
+- Automated alert generation
+- IOC enrichment pipeline
+- Sigma rule generation
+- Threat hunting dashboards
 
 ---
 
