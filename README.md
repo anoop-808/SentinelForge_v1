@@ -152,8 +152,6 @@ A formal SOC investigation report was created, including:
 
 ## MITRE ATT&CK Mapping
 
-## MITRE ATT&CK Mapping
-
 | Security Activity | ATT&CK Technique |
 |-------------------|------------------|
 | Failed SSH Login Attempts | T1110.001 - Password Guessing |
