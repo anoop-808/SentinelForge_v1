@@ -109,6 +109,14 @@ A formal SOC investigation report was created, including:
 
 ---
 
+## MITRE ATT&CK Mapping
+
+| Security Activity | ATT&CK Technique |
+|-------------------|------------------|
+| Failed SSH Login Attempts | T1110 - Brute Force |
+| Successful SSH Authentication | T1078 - Valid Accounts |
+| Remote Access Services | T1021 - Remote Services |
+
 ## Repository Structure
 
 ```text
@@ -125,6 +133,20 @@ SOC-LAB/
 ```
 
 ---
+
+## Dashboard Preview
+
+### Event Breakdown
+
+![Event Breakdown](visualization/charts/event_breakdown_pie.png)
+
+### Event Categories
+
+![Event Categories](visualization/charts/event_categories.png)
+
+### Severity Distribution
+
+![Severity Distribution](visualization/charts/severity_distribution.png)
 
 ## Key Results
 
@@ -152,4 +174,3 @@ SOC-LAB/
 B. Giri Anoop
 
 SOC Analyst Student Project
-CyArt Internship Program
